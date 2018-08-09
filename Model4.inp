@@ -1,0 +1,22 @@
+TITLE:              Model 4: Three factors model with 10 indicators; 
+                    
+DATA:               FILE IS NL2.dat;
+! you can insert comment by inserting explanation mark
+VARIABLE:           NAMES ARE 	Country imsmetn imdfetn impcntr 
+            		gndr yrbrn edulvl eduyrs ipmodst imptrad iprule   
+            		ipbhprp ipeqopt ipudrst impenv;
+
+                    MISSING ARE all (7-9);
+
+                    USEVARIABLES ARE ipmodst imptrad iprule ipbhprp
+                    imsmetn imdfetn impcntr ipeqopt ipudrst impenv;
+
+MODEL:              TraCo BY ipmodst imptrad iprule ipbhprp;
+                    Atti BY imsmetn imdfetn impcntr;
+                    Univ BY ipeqopt ipudrst impenv;
+
+
+OUTPUT:             sampstat standardized modindices (all) tech4 res;
+
+
+
