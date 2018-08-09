@@ -79,7 +79,7 @@ summary(cfa4, header = TRUE, fit.measures = TRUE, standardized = TRUE, estimates
 
 semPaths(cfa4, "est", layout = "tree2", mar = c(9,1,9,1))
 
-mi <- modificationindices(cfa4, minimum.value = 10)
+mi <- modificationindices(cfa4, minimum.value = 4)
 
 View(mi)
 
